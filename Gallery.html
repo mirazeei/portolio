@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio Theme | Website Example 5</title>
+
+	<!-- Small Icon that appears in the brower's tab -->
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">					
+
+	<!-- To ensure proper rendering and touch zooming in Mobile Phones-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+
+	<!-- For Font-Aswesome Icons -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Latest compiled and minified Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Satisfy|Questrial|Roboto" rel="stylesheet">
+
+	<!-- CSS -->
+    <style type="text/css">
+        body{
+            line-height: 1.4;
+            font: 400 15px 'Roboto', sans-serif;
+            letter-spacing: 0.5px;
+            color: #333;
+
+        }
+        /* a{
+            outline: none;
+        } */
+        /* Style Header */
+        /* .bg-header{
+            background: url(img/bg-banner.jpg) no-repeat fixed;
+            background-size: cover;
+            min-height: 630px;
+            position: relative;
+        } */
+        /* .header-bg-gray{
+            background-color: rgba(0,0,0,0.67);
+            min-height: 650px;
+
+        }
+        .container-fluid{
+            padding: 0;
+        } */
+        /* Banner-Text */
+        /* .banner-text{
+            border-left: 5px solid #BE2525;
+            padding: 15px 40px;
+            color: #FFF;
+            margin-top: 170px;
+        }
+
+        .banner-text h2, .banner-text p{
+            font: 400 40px 'Questrial', sans-serif;
+        }
+        .banner-text p{
+            line-height: 1.4;
+        } */
+
+        .decorate{
+            font-family: 'Satisfy', cursive;
+        }
+        /* .scroll-to-about a i{
+            text-align: center;
+            position: absolute;
+            bottom: -140px;
+            font-size: 24px;
+            color: #FFF;
+            width: 40px;
+            height: 40px;
+        } */
+
+        /* About section */
+        .section-padding{
+            padding: 60px 0px;
+        }
+        .title-text{
+            padding: 0 25px 0 0;
+            borfer-right: 5px solid #BE2525;
+            font-size: 24px;
+        }
+        /* Portfolio section */
+        #portfolio{
+            background-color: #F0F1E9;
+        }
+        .fit-image{
+            height: 100%;
+            width: 100%;
+        }
+        .title{
+            font-size: 24px;
+            margin-bottom: 50px;
+        }
+        /* Image-Grid */
+        #my-Grid{
+            margin-top: 50px;
+        }
+        .grid-padding{
+            padding: 0 8px;
+        }
+        .grid-padding img{
+            margin-bottom: 15px;
+            transition: 0.8s ease;
+        }
+        .grid-padding img:hover{
+            box-shadow: 0 10px 40px 0 rgba(0,0,0,0.5);
+            transition: 0.8s ease;
+        }
+        .col-sm-4{
+            padding-right: 30px;
+        }
+
+        /* The Modal */
+        .modal{
+            display: none;               /* Changed to imline-flex using JavaScript */
+            position: fixed;
+            z-index: 1;
+            padding: 5px 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+        }
+        .modal-content{
+            position: relative;
+            margin: auto;
+            padding: 0;
+            width: 85%;
+            max-width: 1200px;
+            border: none;
+            background-color: transparent;
+        }
+        .my-slides{
+            text-align: center;
+        }
+
+        /* adjust Image Size */
+        .portrait-image{
+            height: 98vh;
+        }
+        .landscape-image{
+            width: 66vw;
+        }
+        .close{
+            color: #FFF;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 48px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+        .close:hover, .close:focus{
+            color: #FFF;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Next and Previous Buttons */
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: #FFF !important;
+            font-weight: bold;
+            font-size: 3em;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        /* position the Next Button to the right */
+        .next{
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+        /* Hovering effect for Previous and next Buttons */
+        .next:hover, .prev:hover{
+            background-color: rgba(0,0,0,0.8);
+        }
+        /* numbertext (1 / 15) */
+        .numbertext{
+            color: gray;
+            font-size: 18px;
+            font-family: lato, sans-serif;
+            padding: 8px 50px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body id="my-portfolio" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <!-- Header for Navbar and Banner Text -->
+    <header class="container-fluid bg-header" id="home">
+    </header>
+    
+    <!-- About Section Begins -->
+    <section id="about" class="section-pedding">
+
+    </section>
+    <!-- About Section Ends -->
+    
+    <!-- Portfolio Section Begins -->
+    
+    <section class="section-pedding" id="portfolio">
+        <div class="container">
+
+            <!-- Title Text -->
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="title text-center">
+                        Let's <span class="decorate">see</span> My Work    
+                    </h2>
+                </div>
+            </div>
+
+            <!-- Image Grid or Thumbnails -->
+            <div class="container">
+                <div id="my-grid" class="grid-padding">
+                    <div class="row">
+                        <div class="col-sm-4">
+
+                            <div class="row"><img src="img/portfolio01.jpg" class="fit-image" onclick="openModal();currentSlide(1)"></div>
+                        
+                            <div class="row"><img src="img/portfolio04.jpg" class="fit-image" onclick="openModal();currentSlide(2)"></div>
+
+                            <div class="row"><img src="img/portfolio05.jpg" class="fit-image" onclick="openModal();currentSlide(3)"></div>
+
+                            <div class="row"><img src="img/portfolio01.jpg" class="fit-image" onclick="openModal();currentSlide(4)"></div>
+                        
+                        </div>
+                        <div class="col-sm-4">
+                            
+                            <div class="row"><img src="img/portfolio02.jpg" class="fit-image" onclick="openModal();currentSlide(5)"></div>
+                        
+                            <div class="row"><img src="img/portfolio04.jpg" class="fit-image" onclick="openModal();currentSlide(6)"></div>
+
+                            <div class="row"><img src="img/portfolio05.jpg" class="fit-image" onclick="openModal();currentSlide(7)"></div>
+
+                            <div class="row"><img src="img/portfolio01.jpg" class="fit-image" onclick="openModal();currentSlide(8)"></div>
+
+                            <div class="row"><img src="img/portfolio03.jpg" class="fit-image" onclick="openModal();currentSlide(9)"></div>
+
+                        </div>
+                        <div class="col-sm-4">
+
+                            <div class="row"><img src="img/portfolio04.jpg" class="fit-image" onclick="openModal();currentSlide(10)"></div>
+                        
+                            <div class="row"><img src="img/portfolio01.jpg" class="fit-image" onclick="openModal();currentSlide(11)"></div>
+
+                            <div class="row"><img src="img/portfolio02.jpg" class="fit-image" onclick="openModal();currentSlide(12)"></div>
+
+                            <div class="row"><img src="img/portfolio03.jpg" class="fit-image" onclick="openModal();currentSlide(13)"></div>
+
+                            <div class="row"><img src="img/portfolio02.jpg" class="fit-image" onclick="openModal();currentSlide(14)"></div>
+
+                            <div class="row"><img src="img/portfolio05.jpg" class="fit-image" onclick="openModal();currentSlide(15)"></div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+        
+        </div>
+
+    </section>
+    <!-- Portfolio Section Ends -->
+    
+    <!-- Modal for Full Screen Image View Begins -->
+    <div id="my-modal" class="modal">
+
+        <!-- Close Button -->
+        <span class="close" onclick="closeModal()">&times;</span>
+
+        <!-- Content for Modal -->
+        <div class="modal-content">
+
+            <!-- Image for Modal (Image Viewer or Slider Show) -->
+            <div class="my-slides">
+                <div class="numbertext">1 / 15</div>
+                <img src="img/portfolio01.jpg" class="portrait-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">2 / 15</div>
+                <img src="img/portfolio04.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">3 / 15</div>
+                <img src="img/portfolio05.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">4 / 15</div>
+                <img src="img/portfolio01.jpg" class="portrait-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">5 / 15</div>
+                <img src="img/portfolio02.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">6 / 15</div>
+                <img src="img/portfolio04.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">7 / 15</div>
+                <img src="img/portfolio05.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">8 / 15</div>
+                <img src="img/portfolio01.jpg" class="portrait-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">9 / 15</div>
+                <img src="img/portfolio03.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">10 / 15</div>
+                <img src="img/portfolio04.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">11 / 15</div>
+                <img src="img/portfolio01.jpg" class="portrait-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">12 / 15</div>
+                <img src="img/portfolio02.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">13 / 15</div>
+                <img src="img/portfolio03.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">14 / 15</div>
+                <img src="img/portfolio02.jpg" class="landscape-image">
+
+            </div>
+
+            <div class="my-slides">
+                <div class="numbertext">15 / 15</div>
+                <img src="img/portfolio05.jpg" class="landscape-image">
+
+            </div>
+
+            <!-- Next And Previous Button -->
+            <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlides(1)">&#10095;</a>
+
+        </div>
+
+    </div>
+
+    <!-- Modal for Full Screen Image View End -->
+    
+    <script type="text/javascript">
+
+        /* Open Modal (Image Viewer or Slide Show) */
+        function openModal() {
+            /* Show Image Viewer or modal when any image is clicked */
+            document.getElementById('my-modal').style.display = "inline-flex";
+
+            /*Hide body scrollbar when modal opens up */
+            document.body.style.overflow = "hidden";
+        }
+
+        /* Close Modal (Image Viewer) */
+        function closeModal() {
+            document.getElementById('my-modal').style.display = "none";
+
+            /* show body scrollbar when modal closes */
+            document.body.style.overflow = "auto";
+        }
+
+        /* Declare variable slideIndex and initialise to 1 */
+        var slideIndexJS = 1;
+
+        /* calling function showSlides() by passing variable slideIndexJS. This will hide all the slides initially */
+        showSlides(slideIndexJS);
+
+        /* Function to execute Next and  Previous Buttons operation */
+        function changeSlides(n){
+            showSlides(slideIndexJS += n);      /* slideIndexJS = slideIndexJS +n; */
+        }
+
+        /* Display the image whose thumbnail is clicled */
+        function currentSlide(n){
+            showSlides(slideIndexJS = n);
+        }
+        
+        /* main function to operate the Slide Show or Modal or Image Viewer */
+        function showSlides(n){
+            var i;
+
+            /* Get all elements with class "my-slides" */
+            var slidesJS = document.getElementsByClassName("my-slides");
+
+            /* if the current slide index is greater then total no. of slides, then open slideIndexJS = 1 (begin with first slide after the last slide ends) */
+            if (n > slidesJS.length) { slideIndexJS = 1;}
+
+            /* if the current slide index is less then 1, then open with slideIndexJS = last (if previous button is clicked on first slide then open last slide) */
+            if (n < 1) { slideIndexJS = slidesJS.length;}
+
+            /* hide all slides initially */
+            for (i = 0; i < slidesJS.length; i++){
+                slidesJS[i].style.display = "none";    
+            }
+
+            /* Show slide which is clicked */
+            slidesJS[slideIndexJS-1].style.display = "block";
+        }
+
+    </script>
+    
+</body>
+</html>
